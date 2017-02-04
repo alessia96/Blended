@@ -5,7 +5,7 @@ using UnityEngine.UI;
 public class curtainOpen : MonoBehaviour {
 
     public Image FadeImg;
-    public float fadeSpeed = 1.5;
+    public float fadeSpeed = 1.5f;
 
     void Awake() {
         FadeImg.rectTransform.localScale = new Vector2(Screen.width, Screen.height);
@@ -15,7 +15,7 @@ public class curtainOpen : MonoBehaviour {
         FadeImg.color = Color.Lerp(FadeImg.color, Color.clear, fadeSpeed * Time.deltaTime);
     }
 
-    void update() {
+    void Update() {
         fadeToClear();
     }
 }
