@@ -45,8 +45,14 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets\Scripts\FadeScript.cs" />
+     <Compile Include="Assets\Scripts\Fader.cs" />
+     <Compile Include="Assets\Scripts\Manager.cs" />
      <Compile Include="Assets\Scripts\Terminal.cs" />
      <Compile Include="Assets\Scripts\TestTube.cs" />
+     <Compile Include="Assets\Scripts\curtainClose.cs" />
+     <Compile Include="Assets\Scripts\curtainOpen.cs" />
+     <Compile Include="Assets\Scripts\typewriter.cs" />
  <Reference Include="UnityEngine.UI">
  <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
  </Reference>
