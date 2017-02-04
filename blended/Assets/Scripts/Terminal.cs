@@ -24,4 +24,9 @@ public class Terminal : MonoBehaviour
         //govind's stuff
         Debug.Log("opened terminal");
     }
+
+    public bool GetActive()
+    {
+        return active;
+    }
 }
