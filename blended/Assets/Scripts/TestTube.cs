@@ -5,7 +5,14 @@ public class TestTube : MonoBehaviour
 {
     private bool terminalInUse;
     public GameObject terminal;
-    private Vector3 testTubeLocation; //saving location before animation
+    public GameObject currentTestTube;
+    private GameObject dummy;
+
+    void Start()
+    {
+        this.GetComponent<Animator>().enabled = false;
+        
+    }
 
     void OnMouseDown()
     {
@@ -13,6 +20,9 @@ public class TestTube : MonoBehaviour
 
         if (!terminalInUse)
         {
+            dummy = Instantiate(currentTestTube);
+            dummy.transform.position = currentTestTube.transform.position;
+            dummy.SetActive(false);
             UseTestTube();
         }
     }
@@ -20,15 +30,13 @@ public class TestTube : MonoBehaviour
     void UseTestTube()
     {
         Debug.Log("testtube in use");
-        testTubeLocation = this.GetComponent<Transform>().position;
         this.GetComponent<Animator>().enabled = true;
     }
 
     void PutTestTubeBack()
     {
         Debug.Log("testtube is back");
-        this.GetComponent<Animator>().enabled = false;
-        this.GetComponent<Animation>().enabled = false;
-        this.transform.Translate(testTubeLocation);
+        dummy.SetActive(true);
+        Destroy(currentTestTube);
     }
 }
