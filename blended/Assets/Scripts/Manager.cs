@@ -28,14 +28,22 @@ public class Manager : MonoBehaviour {
                 }
             }
             text = true;
+            curtainClose.SetActive(false);
         }
         if (text) {
-            //scroll text animation
+            GameObject texto = GameObject.Find("Typewriter Text");
+            texto.SetActive(false);
+            if (texto.GetComponent<typewriter>().complete) {
+                if (Input.anyKey) {
+                    curtainClose.SetActive(true);
+                }
+            }
 
         }
    
 	}
     bool isPlaying(){
+        //not complete
         return true;
     }
 }
