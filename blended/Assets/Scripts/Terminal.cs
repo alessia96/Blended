@@ -4,7 +4,7 @@ using System.Collections;
 public class Terminal : MonoBehaviour
 {
     private bool active;
-
+    public GameObject terminalWindow;
     void Start()
     {
         active = true;
@@ -21,7 +21,7 @@ public class Terminal : MonoBehaviour
 
     void OpenTerminal()
     {
-        //govind's stuff
+        terminalWindow.SetActive(true);
         Debug.Log("opened terminal");
     }
 
