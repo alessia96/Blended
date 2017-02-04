@@ -73,9 +73,9 @@
     <Compile Include="Assets\Scripts\Fader.cs" />
     <Compile Include="Assets\Scripts\Manager.cs" />
     <Compile Include="Assets\Scripts\Terminal.cs" />
+    <Compile Include="Assets\Scripts\TestTube.cs" />
     <Compile Include="Assets\Scripts\curtainClose.cs" />
     <Compile Include="Assets\Scripts\curtainOpen.cs" />
-    <Compile Include="Assets\Scripts\dummy.cs" />
     <Compile Include="Assets\Scripts\typewriter.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\SyntaxTree\UnityVS\2015\UnityVS.CSharp.targets" />
