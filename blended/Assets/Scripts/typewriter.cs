@@ -6,8 +6,8 @@ public class typewriter : MonoBehaviour {
     public string text;
     public float speed = 0.6f;
     public string currentText;
-	// Use this for initialization
-	void Start () {
+
+    void Start () {
         StartCoroutine(showDialogue());
 	}
 
