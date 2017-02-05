@@ -7,6 +7,7 @@ public class GameManager : MonoBehaviour
     private int kills = 0;
     public GameObject fallOffChair;
     public GameObject mainCamera;
+    public GameObject healthMessage;
 
     void Update()
     {
@@ -28,6 +29,17 @@ public class GameManager : MonoBehaviour
 
     void KillByGuards()
     {
+        //
+    }
 
+    public void DecreaseHealth()
+    {
+        health--;
+        healthMessage.SetActive(true);
+    }
+
+    public void IncreaseKills()
+    {
+        kills++;
     }
 }
