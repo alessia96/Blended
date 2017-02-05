@@ -12,11 +12,8 @@ public class Terminal : MonoBehaviour
 	
 	void OnMouseDown()
     {
-        if (active)
-        {
-            OpenTerminal();
-            active = false;
-        }
+        OpenTerminal();
+        active = false;
     }
 
     void OpenTerminal()
