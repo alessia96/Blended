@@ -13,13 +13,7 @@ public class typewriter : MonoBehaviour {
 	}
 
     void Update() {
-        if (!Input.anyKey)
-        {
             StartCoroutine(showDialogue());
-        }else{
-            currentText = text;
-            complete = true;
-        }
     }
 
     IEnumerator showDialogue() {
