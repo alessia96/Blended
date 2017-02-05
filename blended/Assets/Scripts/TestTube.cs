@@ -7,11 +7,11 @@ public class TestTube : MonoBehaviour
     public GameObject terminal;
     public GameObject currentTestTube;
     private GameObject dummy;
+    public GameObject flaskContent;
 
     void Start()
     {
         this.GetComponent<Animator>().enabled = false;
-        
     }
 
     void OnMouseDown()
@@ -31,6 +31,8 @@ public class TestTube : MonoBehaviour
     {
         Debug.Log("testtube in use");
         this.GetComponent<Animator>().enabled = true;
+        flaskContent.GetComponent<Renderer>().materials[0] = currentTestTube.GetComponent<Renderer>().materials[0];
+        Debug.Log(flaskContent.GetComponent<Renderer>().materials[0]);
     }
 
     void PutTestTubeBack()

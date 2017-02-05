@@ -1,27 +1,15 @@
 fileFormatVersion: 2
-guid: d277e6f166e423446bc78ae98aa54556
-timeCreated: 1486244852
+guid: daf88eea48514d741a8a4174f7e40e50
+timeCreated: 1486268229
 licenseType: Free
 ModelImporter:
   serializedVersion: 19
   fileIDToRecycleName:
     100000: //RootNode
-    100002: Torus001
-    100004: Torus002
-    100006: Torus003
     400000: //RootNode
-    400002: Torus001
-    400004: Torus002
-    400006: Torus003
-    2300000: Torus001
-    2300002: Torus002
-    2300004: Torus003
-    3300000: Torus001
-    3300002: Torus002
-    3300004: Torus003
-    4300000: Torus001
-    4300002: Torus002
-    4300004: Torus003
+    2300000: //RootNode
+    3300000: //RootNode
+    4300000: Cone002
     9500000: //RootNode
   materials:
     importMaterials: 1
