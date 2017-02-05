@@ -8,10 +8,13 @@ public class TestTube : MonoBehaviour
     public GameObject currentTestTube;
     private GameObject dummy;
     public GameObject flaskContent;
+    private LevelManager levelManager;
+    public GameObject levelManagerHolder;
 
     void Start()
     {
         this.GetComponent<Animator>().enabled = false;
+        levelManager = levelManagerHolder.GetComponent<LevelManager>();
     }
 
     void OnMouseDown()
@@ -29,15 +32,13 @@ public class TestTube : MonoBehaviour
 
     void UseTestTube()
     {
-        Debug.Log("testtube in use");
         this.GetComponent<Animator>().enabled = true;
+        levelManager.AddToPicked(currentTestTube);
         flaskContent.GetComponent<Renderer>().materials[0] = currentTestTube.GetComponent<Renderer>().materials[0];
-        Debug.Log(flaskContent.GetComponent<Renderer>().materials[0]);
     }
 
     void PutTestTubeBack()
     {
-        Debug.Log("testtube is back");
         dummy.SetActive(true);
         Destroy(currentTestTube);
     }

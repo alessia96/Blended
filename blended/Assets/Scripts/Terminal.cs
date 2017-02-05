@@ -19,7 +19,6 @@ public class Terminal : MonoBehaviour
     void OpenTerminal()
     {
         terminalWindow.SetActive(true);
-        Debug.Log("opened terminal");
     }
 
     public bool GetActive()
