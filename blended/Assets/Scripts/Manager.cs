@@ -27,7 +27,7 @@ public class Manager : MonoBehaviour {
         if (text) {
             texto.SetActive(true);
             if (texto.GetComponent<typewriter>().complete) {
-                if (Input.anyKey) {
+                if (Input.GetKeyDown(KeyCode.Space)) {
                     curtainClose.SetActive(true);
                 }
             }
