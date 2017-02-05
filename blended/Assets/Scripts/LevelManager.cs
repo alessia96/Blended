@@ -1,10 +1,11 @@
-﻿using UnityEngine;
-using System.Collections;
-using UnityEditor;
+﻿using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+using System.Linq;
 
 public class LevelManager : MonoBehaviour
 {
-    private GameObject[] picks = new GameObject[3];
+    private ArrayList picks = new ArrayList();
     public GameObject blue;
     public GameObject green;
     public GameObject orange;
@@ -20,22 +21,16 @@ public class LevelManager : MonoBehaviour
 
     public void AddToPicked(GameObject testTube)
     {
-        if (picks[2] == null)
+        picks.Add(testTube);
+        if (picks.Count == 3)
         {
-            picks[2] = testTube;
-        } else if (picks[1] == null)
-        {
-            picks[1] = testTube;
-        } else if (picks[0] == null)
-        {
-            picks[0] = testTube;
             CheckCorrectness();
         }
     }
 
     void CheckCorrectness()
     {
-        if (ArrayUtility.Contains(picks, orange) && ArrayUtility.Contains(picks, red) && ArrayUtility.Contains(picks, violet))
+        if (picks.Contains(orange) && picks.Contains(red) && picks.Contains(violet))
         {
             Success();
         }
@@ -44,9 +39,7 @@ public class LevelManager : MonoBehaviour
             Failure();
         }
 
-        picks[0] = null;
-        picks[1] = null;
-        picks[2] = null;
+        picks.RemoveRange(0,3);
     }
 
     void Success()
