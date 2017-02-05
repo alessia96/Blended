@@ -8,12 +8,15 @@ public class typewriter : MonoBehaviour {
     public string currentText;
     public bool complete;
 
-    void Start () {
-        StartCoroutine(showDialogue());
-	}
+    void Start() {
+            StartCoroutine(showDialogue());
+    }
 
     void Update() {
-            StartCoroutine(showDialogue());
+        if (Input.GetKeyDown(KeyCode.Mouse1)){
+            skip();
+            complete = true;
+        }
     }
 
     IEnumerator showDialogue() {
@@ -25,5 +28,10 @@ public class typewriter : MonoBehaviour {
                 complete = true;
             }
         }
+    }
+
+    public void skip() {
+        StopAllCoroutines();
+        this.GetComponent<Text>().text = text;
     }
 }

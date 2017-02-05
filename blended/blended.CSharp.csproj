@@ -65,14 +65,14 @@
   <ItemGroup>
     <Compile Include="Assets\Scripts\FadeScript.cs" />
     <Compile Include="Assets\Scripts\Fader.cs" />
+    <Compile Include="Assets\Scripts\GameManager.cs" />
     <Compile Include="Assets\Scripts\Manager.cs" />
     <Compile Include="Assets\Scripts\Terminal.cs" />
     <Compile Include="Assets\Scripts\TestTube.cs" />
+    <Compile Include="Assets\Scripts\closeTerminal.cs" />
     <Compile Include="Assets\Scripts\curtainClose.cs" />
     <Compile Include="Assets\Scripts\curtainOpen.cs" />
     <Compile Include="Assets\Scripts\typewriter.cs" />
-    <Compile Include="Assets\closeTerminal.cs" />
-    <Compile Include="Assets\video.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\SyntaxTree\UnityVS\2015\UnityVS.CSharp.targets" />
 </Project>
