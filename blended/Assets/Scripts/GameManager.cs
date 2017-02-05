@@ -8,6 +8,7 @@ public class GameManager : MonoBehaviour
     public GameObject fallOffChair;
     public GameObject mainCamera;
     public GameObject healthMessage;
+    public float lifeTime;
 
     void Update()
     {
@@ -36,10 +37,17 @@ public class GameManager : MonoBehaviour
     {
         health--;
         healthMessage.SetActive(true);
+        StartCoroutine(messageLifeTime());
     }
 
     public void IncreaseKills()
     {
         kills++;
     }
+
+    IEnumerator messageLifeTime() {
+        yield return new WaitForSeconds(lifeTime);
+        healthMessage.SetActive(false);
+    }
+
 }
