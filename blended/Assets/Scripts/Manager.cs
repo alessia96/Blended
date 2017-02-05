@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using UnityEngine.SceneManagement;
 
 public class Manager : MonoBehaviour {
     public bool text;
@@ -29,12 +30,20 @@ public class Manager : MonoBehaviour {
             if (texto.GetComponent<typewriter>().complete) {
                 if (Input.GetKeyDown(KeyCode.Space)) {
                     curtainClose.SetActive(true);
+                    StartCoroutine(loadScene());
                 }
             }
 
         }
    
 	}
+
+    IEnumerator loadScene()
+    {
+        yield return new WaitForSeconds(2f);
+        SceneManager.LoadScene(1);
+    }
+
     IEnumerator resetCurtainOpen() {
         yield return new WaitForSeconds(3f);
         curtainOpen.SetActive(false);
