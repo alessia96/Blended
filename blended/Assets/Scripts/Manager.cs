@@ -2,11 +2,12 @@
 using System.Collections;
 
 public class Manager : MonoBehaviour {
-    private bool text;
+    public bool text;
     private bool logoAnim = false;
-    GameObject curtainClose = GameObject.Find("CurtainClose");
-    GameObject curtainOpen = GameObject.Find("CurtainOpen");
-
+    public GameObject curtainClose;
+    public GameObject curtainOpen;
+    public GameObject texto;
+    public GameObject logo;
     // Use this for initialization
     void Start () {
         curtainOpen.SetActive(true);
@@ -16,23 +17,15 @@ public class Manager : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
         //get the key pressed
-        if (Input.GetKeyDown(KeyCode.Space)) {
-            logoAnim = true;
-            //play the animation
-            if (logoAnim) {
-                //play logo animation and check for its finish using isPlaying()
-                //set curtainOpen to inactive and activate curtain close
-                if (!isPlaying()) {
-                    curtainClose.SetActive(true);
-                    curtainOpen.SetActive(false);
-                }
-            }
-            text = true;
-            curtainClose.SetActive(false);
+        if (Input.GetKeyDown(KeyCode.Space) && !text) {
+            StartCoroutine(resetCurtainOpen());
+            curtainClose.SetActive(true);
+            logo.SetActive(false);
+            StartCoroutine(resetCurtainClose());
+            StartCoroutine(waitText());
         }
         if (text) {
-            GameObject texto = GameObject.Find("Typewriter Text");
-            texto.SetActive(false);
+            texto.SetActive(true);
             if (texto.GetComponent<typewriter>().complete) {
                 if (Input.anyKey) {
                     curtainClose.SetActive(true);
@@ -42,8 +35,16 @@ public class Manager : MonoBehaviour {
         }
    
 	}
-    bool isPlaying(){
-        //not complete
-        return true;
+    IEnumerator resetCurtainOpen() {
+        yield return new WaitForSeconds(3f);
+        curtainOpen.SetActive(false);
+    }
+    IEnumerator resetCurtainClose() {
+        yield return new WaitForSeconds(3f);
+        curtainClose.SetActive(false);
+    }
+    IEnumerator waitText() {
+        yield return new WaitForSeconds(2f);
+        text = true;
     }
 }
