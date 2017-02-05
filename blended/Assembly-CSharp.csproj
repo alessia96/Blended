@@ -52,6 +52,7 @@
      <Compile Include="Assets\Scripts\Manager.cs" />
      <Compile Include="Assets\Scripts\Terminal.cs" />
      <Compile Include="Assets\Scripts\TestTube.cs" />
+     <Compile Include="Assets\Scripts\anim.cs" />
      <Compile Include="Assets\Scripts\closeTerminal.cs" />
      <Compile Include="Assets\Scripts\curtainClose.cs" />
      <Compile Include="Assets\Scripts\curtainOpen.cs" />
